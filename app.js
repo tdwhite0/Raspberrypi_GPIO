@@ -132,6 +132,11 @@ app.router.get('/gpio/:cmd', function (cmd) {
     this.res.end();
 });
 
+app.router.get('/hook/:json', function(json){
+
+console.log(json);
+});
+
 // launch app on tcpoprt
 app.start(tcpport);
 console.log('Raspberry Pi GPIO WebInterface Server running on port '+tcpport);
