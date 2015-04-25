@@ -154,7 +154,7 @@ app.router.get('/gpio/:cmd', function(cmd) {
 app.router.post('/hook', function(json) {
 
      this.res.writeHead(200, { 'Content-Type': 'text/plain' });
-  this.res.write('Hey, you posted some cool data!\n');
+  this.res.write(JSON.stringify(this.req));
   this.res.end();
   console.log(this.req.body);
 });
