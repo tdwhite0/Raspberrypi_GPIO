@@ -155,7 +155,8 @@ app.router.post('/hook', function(json) {
 
      this.res.writeHead(200, { 'Content-Type': 'text/plain' });
   this.res.write('Hey, you posted some cool data!\n');
-  this.res.end(util.inspect(this.req.body, true, 2, true) + '\n');
+  this.res.end();
+  console.log(this.req.body);
 });
 
 // launch app on tcpoprt
