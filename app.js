@@ -153,12 +153,9 @@ app.router.get('/gpio/:cmd', function(cmd) {
 
 app.router.post('/hook', function(json) {
 
-    console.log(this.req);
-    this.res.writeHead(200, {
-        'Content-Type': 'text/plain'
-    });
-    this.res.write('ACK');
-    this.res.end();
+     this.res.writeHead(200, { 'Content-Type': 'text/plain' });
+  this.res.write('Hey, you posted some cool data!\n');
+  this.res.end(util.inspect(this.req.body, true, 2, true) + '\n');
 });
 
 // launch app on tcpoprt
