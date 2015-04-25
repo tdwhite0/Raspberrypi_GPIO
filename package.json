@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "union": "0.3.0",
-    "flatiron": "0.2.8",
     "ecstatic": "0.1.6",
+    "flatiron": "0.2.8",
+    "github": "^0.2.4",
     "rpi-gpio": "0.0.3",
-    "socket.io": "0.9.10"
+    "socket.io": "0.9.10",
+    "union": "0.3.0"
   },
   "devDependenices": {
     "api-easy": "0.3.2",
