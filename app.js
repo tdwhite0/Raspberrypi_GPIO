@@ -60,7 +60,7 @@ if (process.argv[3] !== undefined && process.argv[3].trim() !== '' && process.ar
 
 // maps / exports gpio pins
 //                                            (gpio_pin_number, gpio_pin_name)
-rpi_gpio.setup(7, rpi_gpio.DIR_OUT, gpioWrite(7, 'GPIO_04', false));
+//rpi_gpio.setup(7, rpi_gpio.DIR_OUT, gpioWrite(7, 'GPIO_04', false));
 rpi_gpio.setup(11, rpi_gpio.DIR_OUT, gpioWrite(11, 'GPIO_17', false));
 rpi_gpio.setup(13, rpi_gpio.DIR_OUT, gpioWrite(13, 'GPIO_21', false));
 rpi_gpio.setup(15, rpi_gpio.DIR_OUT, gpioWrite(15, 'GPIO_22', false));
@@ -212,3 +212,9 @@ process.on('SIGINT', function() {
     console.log("Gracefully shutting down from  SIGINT (Crtl-C)");
     process.exit()
 });
+
+
+rpi_gpio.on('change', function(channel, value) {
+    console.log('Channel ' + channel + ' value is now ' + value);
+});
+rpi_gpio.setup(7, rpi_gpio.DIR_IN);
